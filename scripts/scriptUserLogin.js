@@ -15,12 +15,11 @@ $(document).ready(function(){
             },
             success: function(retorno) {
                 if(retorno === "0"){
-                    window.location.href = "Teste.html";
+                    window.location.href = "principal.html";
                 }else{
                     console.log("Erro ao Encontrar");
                 }
                 console.log(retorno);
-
             }
         });
     });        
