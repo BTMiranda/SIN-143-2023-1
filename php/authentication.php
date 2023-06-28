@@ -12,16 +12,20 @@ Class Authentication{
 
     public function verificacao($post){
         // Pesquisa se o Usuario esta cadastrado
-        $sql = "SELECT email, senha FROM users WHERE email = '{$post['email']}' and senha = '{$post['senha']}' ";
+        $sql = "SELECT id_users, tipo, email, senha FROM users WHERE email = '{$post['email']}' and senha = '{$post['senha']}' ";
         // Executa a Pesquisa e Salva na Variavel Temp
         $temp = $this->conn->query($sql);
         // numRows verifica quantas linhas foram retornadas
         if ($temp->num_rows > 0) {
-            echo "0";
+            $row = $temp->fetch_assoc(); // Obtém a primeira linha de resultado
+            $tipo = $row['tipo']; // Obtém o valor da coluna 'tipo' da linha
+            $id = $row['id_users']; // Obtém o valor da coluna 'tipo' da linha
+            echo "principal.php?id={$id}&tipo={$tipo}";
         } else {
-            echo "1";
+            echo "0";
         }
     }
+
     public function cadastro($post){
         $sql = "INSERT INTO users (nome, email, senha, tipo) VALUES
         ('{$post['nome']}','{$post['email']}','{$post['senha']}','{$post['tipo']}')";

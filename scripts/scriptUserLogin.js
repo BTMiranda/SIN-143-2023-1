@@ -15,9 +15,14 @@ $(document).ready(function(){
             },
             success: function(retorno) {
                 if(retorno === "0"){
+<<<<<<< Updated upstream
                     window.location.href = "Teste.html";
                 }else{
+=======
+>>>>>>> Stashed changes
                     console.log("Erro ao Encontrar");
+                }else{
+                    window.location.href = retorno;
                 }
                 console.log(retorno);
 
@@ -27,5 +32,5 @@ $(document).ready(function(){
 });
 
 function GoCadastro() {
-    window.location.href = "cadastro.html";
+    window.location.href = "cadastro.php";
 }

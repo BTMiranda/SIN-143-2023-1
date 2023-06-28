@@ -18,7 +18,7 @@ $(document).ready(function(){
                 action: actionf
             },
             success: function() {
-                window.location.href = "UserLogin.html";
+                window.location.href = "UserLogin.php";
                 console.log(retorno);
 
             }
@@ -27,5 +27,5 @@ $(document).ready(function(){
 });
 
 function GoLogin() {
-    window.location.href = "UserLogin.html";
+    window.location.href = "UserLogin.php";
 }
