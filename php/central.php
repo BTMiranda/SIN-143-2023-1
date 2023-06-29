@@ -1,11 +1,18 @@
 <?php
 include "authentication.php";
+include "event.php";
 include "conexao.php";
+include "review.php";
+include "user.php";
 
 $action = isset($_POST['action']) ? $_POST['action'] : (isset($_GET['action']) ? $_GET['action'] : '');
 
 $Auth = new Authentication($conn);
+$event = new Event($conn);
+$rev = new Review($conn);
+$user = new User($conn);
 
+// Autentificação
 if($action == 'login'){
     $Auth->verificacao($_POST);
 }
@@ -13,6 +20,51 @@ if($action == 'cadastro'){
     $Auth->cadastro($_POST);
 }
 
-// header('Location: index.php');
+// Events
+if($action == 'event_destaque'){
+    $event->read_news();
+}
+if($action == 'pesquisa'){
+    $event->pesquisa($_POST);
+}
+if($action == 'resultado'){
+    $event->resultado($_POST);
+}
+if($action == 'addevent'){
+    $event->addevent($_POST);
+}
+if($action == 'add_id_event'){
+    $event->set_idevent($_POST);
+}
+if($action == 'event_d'){
+    $event->event_d($_POST);
+}
+if($action == 'edit_event_show'){
+    $event->edit_event_show($_POST);
+}
+if($action == 'edit_event'){
+    $event->edit_event($_POST);
+}
+if($action == 'updateevent'){
+    $event->updateevent($_POST);
+}
+
+// Reviews
+if($action == 'event_comment'){
+    $rev->comentario($_POST);
+}
+if($action == 'addcomment'){
+    $rev->add_comment($_POST);
+}
+
+// User
+if($action == 'edit_user'){
+    $user->edit_user($_POST);
+}
+if($action == 'update_user'){
+    $user->update_user($_POST);
+}
+
+
 
 ?>

@@ -15,17 +15,16 @@ $(document).ready(function(){
             },
             success: function(retorno) {
                 if(retorno === "0"){
-                    window.location.href = "Teste.html";
-                }else{
                     console.log("Erro ao Encontrar");
+                }else{
+                    window.location.href = retorno;
                 }
                 console.log(retorno);
-
             }
         });
     });        
 });
 
 function GoCadastro() {
-    window.location.href = "cadastro.html";
+    window.location.href = "cadastro.php";
 }

@@ -7,6 +7,7 @@ body{
     background-color: #1a1a1a;
     height: 100vh;
     display: flex;    
+    flex-wrap: wrap;
 }
 h1{
     font-family: 'Poppins', sans-serif;
@@ -56,6 +57,7 @@ h1{
 .forms_div{
     width: 100%;
     margin: 10px 0px;
+    gap: 10px;
 }
 
 .btn{
