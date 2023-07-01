@@ -14,18 +14,17 @@ $(document).ready(function(){
                 action: actionf
             },
             success: function(retorno) {
-                if(retorno === "0"){
-                    window.location.href = "Teste.html";
-                }else{
+                if(retorno == 0){
                     console.log("Erro ao Encontrar");
+                }else{
+                    window.location.href = "principal.php";
                 }
                 console.log(retorno);
-
             }
         });
     });        
 });
 
 function GoCadastro() {
-    window.location.href = "cadastro.html";
+    window.location.href = "cadastro.php";
 }
