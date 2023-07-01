@@ -54,3 +54,18 @@ function readComment() {
         }
     });
 }
+
+function Comprar(idevento) {
+    var actionf = 'event_comprar';
+    $.ajax({
+        type: "POST",
+        url: "php/central.php",
+        data: {
+            action: actionf,
+            idevent: idevento
+        },
+        success: function(retorno) {
+            $("#show_comments_id").html(retorno);            
+        }
+    });
+}

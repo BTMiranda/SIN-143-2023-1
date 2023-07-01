@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/styleprincipal.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <title>Entrar</title>
+    <title>Editar Perfil</title>
 </head>
 <body>
     <section class="menu_sup">
@@ -18,10 +18,24 @@
             <p class="main_menu">Editar Perfil</p>
         </div>
         <div class="menu_btn">
-            <a href="cadastroevent.php" class="btn_menu"><p>Criar Evento</p></a>
-            <a href="select_edit_event.php" class="btn_menu"><p>Editar Evento</p></a>
+
+            <?php 
+                if($_SESSION['tipo'] != "Participante"){
+                    echo "
+                    <a href=\"cadastroevent.php\" class=\"btn_menu\"><p>Criar Evento</p></a>
+                    <a href=\"select_edit_event.php\" class=\"btn_menu\"><p>Editar Seus Eventos</p></a>
+                    ";
+                }
+                if($_SESSION['tipo'] == "Administrador"){
+                    echo "
+                        <a href=\"dashboard_eventos.php\" class=\"btn_menu\"><p>Dashboard Eventos</p></a>
+                        <a href=\"dashboard_usuarios.php\" class=\"btn_menu\"><p>Dashboard Usuarios</p></a>
+                    
+                    ";
+                }
+            ?>
         </div>
-        <a class="user_a">
+        <a href="usuario.php" class="user_a">
             <img class="userimg" src="imagens/user.jpg"/>
         </a>
     </section>
@@ -51,7 +65,13 @@
                     <option value="" disabled selected>Escolha uma Função</option>
                     <option value="Participante">Participante</option>
                     <option value="Organizador">Organizador</option>
-                    <option value="Administrador">Administrador</option>
+                    <?php 
+                        if($_SESSION['tipo'] == "Administrador"){
+                            echo "
+                                <option value=\"Administrador\">Administrador</option>
+                            ";
+                        }
+                    ?>
                 </select>
             </div>
             

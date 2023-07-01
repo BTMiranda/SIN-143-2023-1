@@ -1,4 +1,4 @@
-function edit_event_show() {
+function dash_event_show() {
     var actionf = 'edit_event_show';
     $.ajax({
         type: "POST",
@@ -18,5 +18,5 @@ function GoPrincipal() {
 
 
 $(document).ready(function() {
-    edit_event_show();
+    dash_event_show();
 });

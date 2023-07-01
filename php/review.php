@@ -37,6 +37,7 @@ class Review{
             echo "Sem Comentarios" ;
         }       
     }
+
     
 
     public function add_comment($post) {

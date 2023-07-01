@@ -20,7 +20,9 @@ $(document).ready(function(){
         var categoriaf = $("#f-categoria").val();
         var imgf = $("#f-img").val();
         var actionf = 'updateevent';
-
+        if(imgf == ""){
+            imgf = "https://www.posgraduacaounincor.com.br/assets/Unincor/images/sem-imagem.jpg";
+        }
         $.ajax({
             type: "POST",
             url: "php/central.php",
@@ -37,6 +39,10 @@ $(document).ready(function(){
                 action: actionf
             },
             success: function(retorno) {
+                console.log("K");
+
+                modal.style.display = 'block';
+
             }
         });
     });        
@@ -70,8 +76,7 @@ function insert_dados() {
             document.getElementById('f-categoria').value = categoria;
             document.getElementById('f-preco').value = preco;
             document.getElementById('f-img').value = imagens;
-            console.log(data);
-            console.log(response);
+
         }
     });
 }

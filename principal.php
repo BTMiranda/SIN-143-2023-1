@@ -18,8 +18,22 @@
             <p class="main_menu">Menu Principal</p>
         </div>
         <div class="menu_btn">
-            <a href="cadastroevent.php" class="btn_menu"><p>Criar Evento</p></a>
-            <a href="select_edit_event.php" class="btn_menu"><p>Editar Evento</p></a>
+
+            <?php 
+                if($_SESSION['tipo'] != "Participante"){
+                    echo "
+                    <a href=\"cadastroevent.php\" class=\"btn_menu\"><p>Criar Evento</p></a>
+                    <a href=\"select_edit_event.php\" class=\"btn_menu\"><p>Editar Seus Eventos</p></a>
+                    ";
+                }
+                if($_SESSION['tipo'] == "Administrador"){
+                    echo "
+                        <a href=\"dashboard_eventos.php\" class=\"btn_menu\"><p>Dashboard Eventos</p></a>
+                        <a href=\"dashboard_usuarios.php\" class=\"btn_menu\"><p>Dashboard Usuarios</p></a>
+                    
+                    ";
+                }
+            ?>
         </div>
         <a href="usuario.php" class="user_a">
             <img class="userimg" src="imagens/user.jpg"/>

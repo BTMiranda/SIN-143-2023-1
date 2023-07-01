@@ -25,9 +25,7 @@ Class Authentication{
             $_SESSION['id'] = $id;
             $_SESSION['tipo'] = $tipo;
             // echo "principal.php?id={$id}&tipo={$tipo}";
-            echo "principal.php";
-            
-
+            echo "1";
         } else {
             echo "0";
         }

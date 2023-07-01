@@ -221,7 +221,7 @@ p{
 
 /* Btn Menu */
 .btn_menu{
-    width: 4rem;
+    width: 6rem;
     height: 4rem;
     text-decoration: none;
     border: none;
@@ -234,6 +234,11 @@ p{
     align-items: center;
     justify-content: center;
 
+}
+
+.btn_menu:active{
+    background-color: #1c87c5;
+    transition: ease-out 0.25s;
 }
 .menu_btn{
     display: flex;

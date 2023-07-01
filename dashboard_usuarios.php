@@ -2,20 +2,20 @@
     session_start();
 ?>
 
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styleprincipal.css">
-    <link rel="stylesheet" href="css/styleeventlist.css">
+    <link rel="stylesheet" href="css/dash_styleprincipal.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <title>Editar Evento</title>
+    <title>Dashboard Usuário</title>
 </head>
 <body>
     <section class="menu_sup">
         <div class="menu_title">
-            <p class="main_menu">Editar Evento</p>
+            <p class="main_menu">Dashboard Usuário</p>
         </div>
         <div class="menu_btn">
 
@@ -41,22 +41,40 @@
     </section>
 
     <section class="forms_body">
-        <h1>Lista de Eventos</h1>
-        <form id="form1">
-        <!-- Campos do formulário -->
-            <div id="divnum" class="forms_div">
-                <button type="button" onclick="GoPrincipal();" class="btn secundario"><p class="text_btn">Voltar</p></button> <!-- Botão de Registrar -->
+        <h1>Usuário</h1>
+        <div id="form" class="forms">
+            <!-- Input de Pesquisa -->
+            <div id="pesquisa" class="forms_div_pesquisa">
+                <p class="text_form">Pesquisar Nome: </p>
+                <input id="f-pesquisa" class="input_form" type="text">
+                <div id="divnum" class="forms_div">
+                    <button type="button" onclick="edit_users_show()" class="btn pesquisa" ><img class="icon_pesquisa" src="imagens/lupa.png"/></button> <!-- Botão de Pesquisa -->
+                </div>
+                
             </div>
-        </form>
+            <div id="divnum" class="forms_div">
+                <button type="button" onclick="Deletar_All_Users()" class="btn" ><p>Excluir Todos Usuários >:)</p></button> <!-- Botão de Pesquisa -->
+            </div>
+            </br>
+            <div id="divnum" class="forms_div">
+                <button type="button" onclick="GoPrincipal()" class="btn" ><p>Voltar</p></button> <!-- Botão de Pesquisa -->
+            </div>
+        </div>
     </section>
 
     <section class="forms_body destaque"> 
-        <h1>Novos Eventos</h1>
-        <div class="show_events" id="show_events_id"></div>
+        <h1>Todos Usuários</h1>
+        <div class="show_events" id="show_users_id"></div>
     </section>
+    <!-- <div id="ModalI" class="modal">
+        <div class="modal-content">
+            <h1>Produto Registrado</h1>
+            <button onclick="closepop()" class="btn modal-btn">Fechar</button>
+        </div>
+    </div> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="scripts/script_select_edit_event.js"></script>
-
+    <script src="scripts/script_dashboard_users.js"></script>
+    <script src="scripts/go.js"></script>
     
 </body>
 </html>

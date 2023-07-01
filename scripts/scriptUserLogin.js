@@ -14,10 +14,10 @@ $(document).ready(function(){
                 action: actionf
             },
             success: function(retorno) {
-                if(retorno === "0"){
+                if(retorno == 0){
                     console.log("Erro ao Encontrar");
                 }else{
-                    window.location.href = retorno;
+                    window.location.href = "principal.php";
                 }
                 console.log(retorno);
             }

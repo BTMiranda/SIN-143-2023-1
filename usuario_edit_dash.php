@@ -1,16 +1,34 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleprincipal.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <title>Cadastro</title>
+    <title>Entrar</title>
 </head>
 <body>
+    <section class="menu_sup">
+        <div class="menu_title">
+            <p class="main_menu">Editar Perfil</p>
+        </div>
+        <div class="menu_btn">
+            <a href="cadastroevent.php" class="btn_menu"><p>Criar Evento</p></a>
+            <a href="select_edit_event.php" class="btn_menu"><p>Editar Evento</p></a>
+        </div>
+        <a class="user_a">
+            <img class="userimg" src="imagens/user.jpg"/>
+        </a>
+    </section>
+
     <section class="forms_body">
-        <h1>Cadastrar-se</h1>
-        <form id="form2" class="forms">
+        <h1>Editar Usuário</h1>
+        <form id="form" class="forms">
             <!-- Input de Nome -->
             <div id="divnum" class="forms_div">
                 <p class="text_form">Nome</p>
@@ -38,10 +56,10 @@
             </div>
             
             <div id="divnum" class="forms_div">
-                <button type="submit" class="btn primario" ><p class="text_btn">Cadastrar</p></button> <!-- Botão de Logar -->
+                <button type="submit" class="btn primario" ><p class="text_btn">Salvar Informações</p></button> <!-- Botão de Logar -->
             </div>
             <div id="divnum" class="forms_div">
-                <button type="button" onclick="GoLogin()" class="btn secundario"><p class="text_btn">Voltar</p></button> <!-- Botão de Registrar -->
+                <button type="button" onclick="GoDashboardUser()" class="btn secundario"><p class="text_btn">Voltar</p></button> <!-- Botão de Registrar -->
             </div>
         </form>
     </section>
@@ -52,7 +70,8 @@
         </div>
     </div> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="scripts/scriptCadastro.js"></script>
+    <script src="scripts/script_user_dash.js"></script>
+    <script src="scripts/go.js"></script>
     
 </body>
 </html>

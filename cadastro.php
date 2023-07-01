@@ -33,7 +33,7 @@
                     <option value="" disabled selected>Escolha uma Função</option>
                     <option value="Participante">Participante</option>
                     <option value="Organizador">Organizador</option>
-                    <option value="Administrador">Administrador</option>
+                    <!-- <option value="Administrador">Administrador</option> -->
                 </select>
             </div>
             
