@@ -25,7 +25,7 @@ Este projeto consiste em um sistema de cadastro de eventos, desenvolvido como pa
 ## Como Executar o Projeto
 1. Clone este repositório para o seu ambiente local:
    ```bash
-   git clone https://github.com/seu-repositorio/cadastro-de-eventos.git
+   git clone https://github.com/BTMiranda/SIN-143-2023-1.git
 
 2. Certifique-se de ter um servidor PHP (como XAMPP, MAMP, ou WAMP) e um banco de dados SQL configurado.
 
